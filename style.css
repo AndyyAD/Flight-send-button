@@ -10,10 +10,17 @@ a{
     text-decoration: none;
 }
 
+:root{
+    --primary: #5BC0F8;
+    --secondary: #FFFBF5;
+    --tertiary: #03001C;
+}
+
 .main{
     position: relative;
     width: 100%;
     height: 100vh;
+    background-color: var(--primary);
 }
 
 .anime-wrap{
@@ -21,15 +28,66 @@ a{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
-.btn{
-    width: 10rem;
-    height: 4rem;
-    border-radius: .7rem;
+.btn {
+    padding: 1.2rem 7.5rem 1.2rem 2.9rem;
+    border-radius: 3rem;
     font-family: 'Montserrat Alternates', sans-serif;
-    color: var(--secondary);
+    font-weight: 700;
     font-size: 1.5rem;
-    font-weight: 800;
-    padding: .9rem;
+    overflow: hidden;
+    outline: none;
+    border: 3px solid var(--tertiary);
+}
+
+.plane {
+    position: absolute;
+    width: 4rem;
+    height: 3rem;
+    top: 19%;
+    left: 62%;
+}
+
+.plains {
+    position: fixed;
+    height: 50rem;
+    top: -3%;
+    left: 8%;
+    transform: translateX(81%)
+}
+
+.move-btn {
+    transform: translate(-228%, -50%);
+    transition: all 1s;
+}
+
+.move-plains {
+    transform: translateX(0);
+    transition: all 2s;
+}
+
+.fly-plane{
+    animation-name: fly;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    25% {
+        transform: translate(450%, 0%);
+    }
+    50% {
+        transform: translate(900%, -100%);
+    }
+    75% {
+        transform: translate(1350%, -180%);
+    }
+    100% {
+        transform: translate(2000%, -250%);
+    }
 }
