@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@800&display=swap');
 
 *{
     margin: 0;
@@ -13,6 +13,7 @@ a{
 :root{
     --primary: #5BC0F8;
     --secondary: #FFFBF5;
+    --hover: #ffedd3;
     --tertiary: #03001C;
 }
 
@@ -35,11 +36,16 @@ a{
     padding: 1.2rem 7.5rem 1.2rem 2.9rem;
     border-radius: 3rem;
     font-family: 'Montserrat Alternates', sans-serif;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.5rem;
     overflow: hidden;
     outline: none;
+    background-color: var(--secondary);
     border: 3px solid var(--tertiary);
+}
+
+.btn:hover{
+    background-color: var(--hover);
 }
 
 .plane {
@@ -47,7 +53,7 @@ a{
     width: 4rem;
     height: 3rem;
     top: 19%;
-    left: 62%;
+    left: 56%;
 }
 
 .plains {
@@ -59,7 +65,7 @@ a{
 }
 
 .move-btn {
-    transform: translate(-228%, -50%);
+    transform: translate(-250%, -50%);
     transition: all 1s;
 }
 
@@ -70,8 +76,12 @@ a{
 
 .fly-plane{
     animation-name: fly;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function: linear;
+}
+
+.hide{
+    display: none;
 }
 
 @keyframes fly {
@@ -82,12 +92,12 @@ a{
         transform: translate(450%, 0%);
     }
     50% {
-        transform: translate(900%, -100%);
+        transform: translate(900%, -150%);
     }
     75% {
-        transform: translate(1350%, -180%);
+        transform: translate(1350%, -250%);
     }
     100% {
-        transform: translate(2000%, -250%);
+        transform: translate(1750%, -320%);
     }
 }
